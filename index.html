@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヘアカラーのカウンセリング</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5e6d3;
+            color: #4a4a4a;
+        }
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            transform: translateY(50px);
+        }
+        .slide.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .slide::before, .slide::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background-color: #40e0d0;
+        }
+        .slide::before {
+            top: 0;
+        }
+        .slide::after {
+            bottom: 0;
+        }
+        h1 {
+            font-size: 3em;
+            color: #FFA500;
+            margin: 0 0 20px 0;
+        }
+        h2 {
+            font-size: 2em;
+            color: #FFA500;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: #800000;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p, li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            text-align: left;
+            padding-left: 20px;
+            margin-top: 0;
+        }
+        .lecturer-name {
+            font-size: 1.8em;
+            color: #8A2BE2;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .subtitle {
+            font-size: 2em;
+            color: #800000;
+            margin: 20px 0;
+            line-height: 1.4;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            max-width: 80%;
+        }
+        .nav-arrows {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .nav-arrow {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .nav-arrow:hover {
+            background-color: #FF8C00;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide active">
+            <div class="content-wrapper">
+                <h1>ヘアカラーの<br>カウンセリング</h1>
+                <div class="subtitle">
+                    お客様のニーズを理解し<br>
+                    最適なカラーを提案する方法
+                </div>
+                <div class="lecturer-name">オノ ミカ</div>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>授業の目標</h2>
+                <ul>
+                    <li>お客様のニーズを正確に把握する方法を学ぶ</li>
+                    <li>お客様に合ったヘアカラーを提案するスキルを習得する</li>
+                    <li>カウンセリングの流れを理解する</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>カウンセリングの重要性</h2>
+                <ul>
+                    <li>信頼関係の構築: お客様との信頼を築くことで、リピーターの獲得に繋がる</li>
+                    <li>満足度向上: お客様の希望に沿った結果を提供することで満足度を高める</li>
+                    <li>トラブルの防止: 事前にしっかりと確認することでトラブルを未然に防ぐ</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>カウンセリングの基本ステップ</h2>
+                <ol>
+                    <li>お客様の要望のヒアリング</li>
+                    <li>現在の髪の状態の確認</li>
+                    <li>カラーヒストリーの確認</li>
+                    <li>カラープランの提案</li>
+                    <li>カラーテスト</li>
+                    <li>最終確認と合意</li>
+                </ol>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>挨拶と自己紹介</h2>
+                <ul>
+                    <li>ポイント: 明るい笑顔で挨拶し、リラックスした雰囲気を作る</li>
+                    <li>自己紹介: 自己紹介と役割の説明を簡潔に行う</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>お客様の要望のヒアリング</h2>
+                <ul>
+                    <li>具体的な質問: どのような色にしたいか、特定のスタイルやイメージがあるか</li>
+                    <li>参考画像: お客様に参考画像を見せてもらうことで、具体的なイメージを共有</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>現在の髪の状態の確認</h2>
+                <h3>確認事項:</h3>
+                <ul>
+                    <li>髪質（太さ、硬さ、クセ）</li>
+                    <li>ダメージ具合（枝毛、切れ毛）</li>
+                    <li>髪の長さと量</li>
+                    <li>地肌の状態（乾燥、フケなど）</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>カラーヒストリーの確認</h2>
+                <h3>質問内容:</h3>
+                <ul>
+                    <li>過去のカラーリング履歴（頻度、使用した製品）</li>
+                    <li>施術方法（サロン、セルフカラー）</li>
+                    <li>アレルギーやトラブルの有無</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>カラープランの提案</h2>
+                <h3>提案のポイント:</h3>
+                <ul>
+                    <li>お客様の要望と髪の状態に基づく具体的な提案</li>
+                    <li>色見本の提示と説明</li>
+                    <li>メリット・デメリットの説明（色持ち、ダメージなど）</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>カラーテストの重要性</h2>
+                <h3>テストの目的:</h3>
+                <ul>
+                    <li>色味の確認（少量の毛束でテスト）</li>
+                    <li>アレルギー反応のチェック</li>
+                    <li>お客様が最終的に納得できるかの確認</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>最終確認と合意</h2>
+                <h3>確認事項:</h3>
+                <ul>
+                    <li>カラープランの最終確認</li>
+                    <li>施術前の合意と同意書の確認（重要ポイント）</li>
+                    <li>質疑応答の時間</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>カウンセリングでの注意点</h2>
+                <ul>
+                    <li>傾聴: お客様の話をしっかり聞く</li>
+                    <li>明確な説明: 専門用語を避け、分かりやすい言葉で説明</li>
+                    <li>無理な提案をしない: お客様の意思を尊重し、無理な提案は避ける</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>実際のカウンセリング例</h2>
+                <h3>ケーススタディ1: ブラウン系カラー</h3>
+                <p>お客様の要望と提案のプロセス</p>
+                <h3>ケーススタディ2: ブリーチを含むカラー</h3>
+                <p>ダメージリスクとケアの提案</p>
+                <h3>ケーススタディ3: トーンダウンのカラー</h3>
+                <p>暗めのカラーへの提案と注意点</p>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>質疑応答</h2>
+                <h3>セクション1: 学生からの質問に答える</h3>
+                <h3>セクション2: 実際のカウンセリング体験の共有</h3>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">→</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content-wrapper">
+                <h2>まとめ</h2>
+                <h3>ポイント復習:</h3>
+                <ul>
+                    <li>カウンセリングの重要性</li>
+                    <li>基本ステップの確認</li>
+                    <li>お客様との信頼関係構築の方法</li>
+                </ul>
+                <h3>今後の実践へのアドバイス:</h3>
+                <ul>
+                    <li>実際の現場での経験を積むことの重要性</li>
+                    <li>継続的な学習とスキルアップ</li>
+                </ul>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev">←</button>
+                <button class="nav-arrow next">
